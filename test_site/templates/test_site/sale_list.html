@@ -21,10 +21,12 @@
 
     {{sales}}
     <!--<table>
-    {% for value in  sales.data %}
-    <tr>
-        <td> {{ value.2 }} </td>
-    </tr>
+    {% for key, value in  sales.items %}
+        <tr>
+            <td> {{ key }} </td>
+            <td> {{ value }} </td>
+
+        </tr>
     {% endfor %}
     </table>-->
 
