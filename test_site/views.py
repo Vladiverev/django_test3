@@ -7,20 +7,9 @@ from django.contrib.auth import login, authenticate
 # Create your views here.
 
 
-def client_info(sale):
-    #sales = []
-    #for key, s in sale.iterrows():
-    #    sales.append(s.turnover)
-    #return sales
-    sales = {}
-    for key, s in sale.items():
-        sales[key] = s
-    return sales
-
-
 def sale_list(request):
     try: 
-        dw = datawiz.DW(request.user.username, request.user.password)
+        dw = datawiz.DW(request.user.username, Client.objects.get(user_name=request.user).pass_user)
         client = dw.get_client_info()
         sales = dw.get_categories_sale(categories = ["sum"],by = ['turnover', 'qty', 'receipts_qty'],
 						date_from = "2015-11-17", date_to = "2015-11-18",
