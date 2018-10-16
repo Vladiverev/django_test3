@@ -1,6 +1,33 @@
 {% extends 'test_site/base.html' %}
 {% block content %}
+<div class="col-md-4">
+    <h4>
+        Information
+    </h4>
+    <p>
+        Name - {{client.name}}
+    </p>
+    <p>
+        Shops - {{client.shops}}
+    </p>
+    <p>
+        Date_from - {{client.date_from}}
+    </p>
+    <p>
+        Date_to - {{client.date_to}}
+    </p>
+</div>
+<div class="col-md-4">
 
-{{shop}}
+    {{sales}}
+    <!--<table>
+    {% for value in  sales.data %}
+    <tr>
+        <td> {{ value.2 }} </td>
+    </tr>
+    {% endfor %}
+    </table>-->
 
-{% endblock %}
+</div>
+
+    {% endblock %}
