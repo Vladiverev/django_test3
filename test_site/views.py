@@ -32,7 +32,9 @@ def sale_list(request):
 						#date_from = "2015-11-17", date_to = "2015-11-18",
 						#interval = 'days', view_type = 'raw')['receipts_qty']
         sales['average_qty'] = sales['turnover'] / sales['qty']
-        sales1  = sales.T
+        sales1  = sales.T.reset_index()
+        sales1['dif_per'] = sales1[1] / sales1[0]
+        sales1['dif_min'] = sales1[1] - sales1[0]
 
                 
         
