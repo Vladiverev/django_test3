@@ -1,6 +1,6 @@
 {% extends 'test_site/base.html' %}
 {% block content %}
-<div class="col-md-4">
+<div class="text-info">
     <h4>
         Information
     </h4>
@@ -17,24 +17,27 @@
         Date_to - {{client.date_to}}
     </p>
 </div>
-<div class="col-md-4">
-    <div>
-        {% autoescape off %}
-        {{ sales }}
-        {% endautoescape %}
-    </div>
-
-    <div>
-        {% autoescape off %}
-        {{ products1 }}
-        {% endautoescape %}
-    </div>
-    <div>
-        {% autoescape off %}
-        {{ products2 }}
-        {% endautoescape %}
-    </div>
-
+<div class="class=" container"">
+    <h2>
+        Key Indicators
+    </h2>
+    {% autoescape off %}
+    {{ sales }}
+    {% endautoescape %}
+    <h2>Products that have grown in sales</h2>
+    {% autoescape off %}
+    {{ products1 }}
+    {% endautoescape %}
+    <h2>Goods that fell in sales</h2>
+    {% autoescape off %}
+    {{ products2 }}
+    {% endautoescape %}
 </div>
+<script>
+    $(document).ready(function () {
+        $('#differ_max').DataTable();
+        $('#differ_min').DataTable();
+    });
+</script>
 
     {% endblock %}

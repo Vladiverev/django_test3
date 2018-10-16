@@ -38,9 +38,11 @@ def sale_list(request):
         product1['differ_turnover'] = product1['turnover'] - product2['turnover']
         product = product1.drop(['turnover', 'qty'], axis='columns')
         
-        return render(request, 'test_site/sale_list.html', {'client': client, 'sales': sales1.to_html, 
-                                                            'products1': product.sort_values(by='differ_qty').to_html,
-                                                           'products2': product.sort_values(by='differ_qty', ascending=False).to_html})
+        return render(request, 'test_site/sale_list.html', {'client': client, 'sales': sales1.to_html(index=False, classes="table"), 
+                                                            'products1': product.sort_values(by='differ_qty').to_html(index=False, 
+                                                                                                                      classes="table table-striped table-bordered table-sm", table_id='differ_max'),
+                                                           'products2': product.sort_values(by='differ_qty', ascending=False).to_html(index=False, 
+                                                                                                                                      classes="table table-striped table-bordered table-sm", table_id='differ_min')})
         
     except Exception:        
         return render(request, 'test_site/index.html',{})
