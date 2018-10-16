@@ -18,17 +18,22 @@
     </p>
 </div>
 <div class="col-md-4">
+    <div>
+        {% autoescape off %}
+        {{ sales }}
+        {% endautoescape %}
+    </div>
 
-    {{sales}}
-    <!--<table>
-    {% for key, value in  sales.items %}
-        <tr>
-            <td> {{ key }} </td>
-            <td> {{ value }} </td>
-
-        </tr>
-    {% endfor %}
-    </table>-->
+    <div>
+        {% autoescape off %}
+        {{ products1 }}
+        {% endautoescape %}
+    </div>
+    <div>
+        {% autoescape off %}
+        {{ products2 }}
+        {% endautoescape %}
+    </div>
 
 </div>
 
