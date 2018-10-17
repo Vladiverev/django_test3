@@ -1,4 +1,4 @@
-# django_test2
+# django_test3
 
 Тестовая иннформация  с использованием datawiz.io
 
