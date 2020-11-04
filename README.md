@@ -9,8 +9,7 @@
 	$python manage.py runserver <br/>
 </p>
 
-Then visit http://127.0.0.1:8000/ to view the app.  <br/>
-http://vladiverev.pythonanywhere.com
+Then visit http://127.0.0.1:8000/ to view 
 
 # requirements
 
